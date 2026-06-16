@@ -1,0 +1,331 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #141414;
+    color: #f8fafc;
+    padding: 20px;
+}
+
+
+/* =====================
+   GRID LAYOUT UTAMA
+===================== */
+
+.web-layout{
+    display: grid;
+    min-height: 100vh;
+
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 120px 1fr 60px;
+    gap: 15px;
+
+    grid-template-areas:
+        "header header"
+        "sidebar content"
+        "footer footer";
+}
+
+/* =====================
+   HEADER  SECTION
+===================== */
+
+.header{
+    grid-area: header;
+    background-color: #000000;
+    border-bottom: 3px solid #E50914;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 20px;
+}
+
+/* ==========SEARCH BOX========== */
+
+.search-box{
+    display: flex;
+    gap: 10px;
+}
+
+.search-box input{
+    padding: 8px 12px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #2d2d2d;
+    color: white;
+}
+.search-box input::placeholder{
+    color: #999;
+}
+
+/* SEARCH BUTTON INTERACTION */
+
+.search-box button{
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #E50914;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-box button:hover{
+    background-color: #B20710;
+
+}
+
+.search-box button:active{
+    transform: scale(0.95);
+}
+
+ /* HEADER TITLE EFFECT */
+.header h1{
+    color: #E50914;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    text-shadow: 
+        0 0 5px #E50914,
+        0 0 15px #E50914,
+        0 0 30px rgba(229, 9, 20, 0.7);
+
+    transition: all 0.4s ease;
+    animation: glow 2.5s infinite;
+}
+
+/* KEYFRAME ANIMATION UNTUK GLOW EFFECT */
+@keyframes glow {
+    0% { text-shadow: 0 0 5px #E50914; }
+    50% { text-shadow: 0 0 20px #E50914; }
+    100% { text-shadow: 0 0 5px #E50914; }
+}
+
+.header h1:hover{
+    transform: scale(1.05);
+}
+
+/* =====================
+   SIDEBAR NAVIGATION
+===================== */
+
+.sidebar{
+    grid-area: sidebar;
+    background-color: #1a1a1a;
+    border: 1px solid #2d2d2d;
+    padding: 20px;
+}
+
+.sidebar h3{
+    margin-top: 0;
+}
+
+.sidebar ul{
+    list-style: none;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar li{
+    padding: 10px;
+    background-color: #2d2d2d;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sidebar li:hover{
+    background-color: #E50914;
+    transform: translateX(5px);
+}
+
+/* MAIN CONTENT AREA */
+
+.content{
+    grid-area: content;
+    background-color: #181818;
+    border: 1px solid #2d2d2d;
+    padding: 20px;
+}
+
+.content h2{
+    margin-top: 0;
+}
+
+/* DETAIL BOX (SINOPSIS FILM) */
+.details{
+    margin-top: 10px;
+    padding: 12px 14px;
+    background: linear-gradient(145deg, #111, #1a1a1a);
+    border-left: 3px solid #E50914;
+    border-radius: 6px;
+    text-align: left;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+
+    font-size: 13px;
+    line-height: 1.5;
+    color: #d1d1d1;
+    
+}
+
+
+
+/* DASHBOARD GRID (CARD LAYOUT)*/
+
+.dashboard-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* CARD FILM */
+
+ .card{
+    background: #222222;
+    border: 1px solid #333333;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+
+.card img{
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    background-color: #0f172a;
+    border-radius: 8px;
+}
+.card h3{
+    margin-top: 10px;
+}
+
+.card-button{
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.card:hover{
+    transform: translateY(-6px);
+}
+
+/* STYLE BUTTON DASAR */
+
+.btn{
+    padding: 8px 16px;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    background-color: #E50914;
+}
+
+.btn:hover{
+    background-color: #B20710;
+}
+
+.btn:active{
+    transform: scale(0.95);
+}
+
+
+/* CARD BUTTON*/
+
+.btn.like-btn{
+    background-color: #E50914;
+}
+
+.btn.like-btn:hover{
+    background-color: #B20710;
+}
+
+.btn.save-btn{
+    background-color: #4e5056; 
+    color: white;
+    transition: all 0.15s ease;
+}
+
+.btn.save-btn:hover{
+    background-color: #323538;
+}
+.btn.save-btn:active{
+    transform: scale(0.95);
+}
+.btn.search-btn{
+    background-color: #E50914;
+}
+
+.btn.search-btn:hover{
+    background-color: #B20710;
+}
+
+
+
+/* =====================
+   FOOTER
+===================== */
+
+.footer{
+    grid-area: footer;
+    background-color: #000000;
+    border-top: 2px solid #E50914;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* RESPONSIVE MOBILE */
+
+@media (max-width: 768px){
+
+    .web-layout{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "content"
+            "footer";
+    }
+
+    .header{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        padding: 15px;
+        height: auto;
+    }
+
+    .header h1{
+        margin: 0;
+        text-align: center;
+        font-size: 24px;
+    }
+
+    .search-box{
+        width: 100%;
+        display: flex;
+    }
+
+    .search-box input{
+        flex: 1;
+    }
+
+    .dashboard-grid{
+        grid-template-columns: 1fr;
+    }
+
+}
